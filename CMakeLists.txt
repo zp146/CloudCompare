@@ -12,7 +12,10 @@ endif()
 
 # Add our cmake module path so we don't need relative paths for these
 list( APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake/" )
+set(CMAKE_TOOLCHAIN_FILE "$ENV{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake" CACHE STRING "Vcpkg toolchain file")
+message("toolchain file: ${CMAKE_TOOLCHAIN_FILE}")
 
+include(${CMAKE_TOOLCHAIN_FILE})
 include( CMakePolicies )
 include( CMakeSetCompilerOptions )
 include( DeployQt )
