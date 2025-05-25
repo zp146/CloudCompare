@@ -1,6 +1,7 @@
-{
-	"dependencies": [
-		"qt5"
+{	"dependencies": [
+		"qt5",
+		"cgal",
+		"pcl"
 	],
   "builtin-baseline": "898b728edc5e0d12b50015f9cd18247c4257a3eb",
 	"overrides": [
