@@ -8,9 +8,10 @@ if( PLUGIN_STANDARD_QHOUGH_NORMALS )
 	
 	set( EIGEN_ROOT_DIR "" CACHE PATH "Eigen root (contains the Eigen directory)" )
 	if ( NOT EIGEN_ROOT_DIR )
-		message( SEND_ERROR "No Eigen root directory specified (EIGEN_ROOT_DIR)" )
+        	#message( SEND_ERROR "No Eigen root directory specified (EIGEN_ROOT_DIR)" )
+		set(EIGEN_ROOT_DIR "$ENV{VCPKG_INSTALLED_DIR}/x64-linux/include/eigen3")
 	endif()
-
+       
 	target_include_directories( ${PROJECT_NAME} PRIVATE ${EIGEN_ROOT_DIR} )
 	
 	add_subdirectory( extern/nanoflann )
